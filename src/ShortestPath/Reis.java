@@ -1,4 +1,5 @@
 package ShortestPath;
 
-public class Reis {
+public class Reis implements Comparable{
+    Stap[] stappen;
 }
