@@ -1,9 +1,18 @@
 package ShortestPath;
 
 public class Rit extends Stap{
-    int afstand;
+    private final int afstand;
 
     public Rit(int afstand) {
         this.afstand = afstand;
+    }
+
+    public int getAfstand() {
+        return afstand;
+    }
+
+    @Override
+    public int getZwaarte() {
+        return getAfstand()*2;
     }
 }

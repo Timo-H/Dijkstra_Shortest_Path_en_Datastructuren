@@ -1,5 +1,28 @@
 package ShortestPath;
 
-public class Reis implements Comparable{
-    Stap[] stappen;
+import java.util.ArrayList;
+
+public class Reis implements Comparable<Reis>{
+    ArrayList<Stap> stappen = new ArrayList<>();
+
+    public Reis(ArrayList<Stap> stappen) {
+        this.stappen = stappen;
+    }
+
+    public ArrayList<Stap> getStappen() {
+        return stappen;
+    }
+
+    public int getZwaarte() {
+        int weight = 0;
+        for (Stap stap : getStappen()) {
+            weight += stap.getZwaarte();
+        }
+        return weight;
+    }
+
+    @Override
+    public int compareTo(Reis other) {
+        return Integer.compare(getZwaarte(), other.getZwaarte());
+    }
 }
