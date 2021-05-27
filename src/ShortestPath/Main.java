@@ -1,6 +1,7 @@
 package ShortestPath;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class Main{
     public static void main(String [] args) {
@@ -40,6 +41,13 @@ public class Main{
         Reis reis3 = new Reis(stappen3);
         Reis reis4 = new Reis(stappen4);
 
+        PriorityQueue<Reis> pQueue = new PriorityQueue<>();
+        pQueue.add(reis1);
+        pQueue.add(reis2);
+        pQueue.add(reis3);
+        pQueue.add(reis4);
+
+        System.out.println(pQueue);
 
     }
 }

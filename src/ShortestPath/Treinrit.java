@@ -15,4 +15,11 @@ public class Treinrit extends Stap{
     public int getZwaarte() {
         return getTijd()*2;
     }
+
+    @Override
+    public String toString() {
+        return "\nTreinrit: " +
+                "\nTijd: " + getTijd() +
+                "\nTotale zwaarte: " + getZwaarte();
+    }
 }

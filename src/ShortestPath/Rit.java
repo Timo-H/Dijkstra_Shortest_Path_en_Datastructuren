@@ -15,4 +15,11 @@ public class Rit extends Stap{
     public int getZwaarte() {
         return getAfstand()*2;
     }
+
+    @Override
+    public String toString() {
+        return "\nRit: " +
+                "\nAfstand: " + getAfstand() +
+                "\nTotale zwaarte: " + getZwaarte();
+    }
 }

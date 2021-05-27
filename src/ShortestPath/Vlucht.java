@@ -21,4 +21,12 @@ public class Vlucht extends Stap{
     public int getKansBagageVerlies() {
         return kansBagageVerlies;
     }
+
+    @Override
+    public String toString() {
+        return "\nVlucht: " +
+                "\nprijs: " + getPrijs() +
+                "\nkansBagageVerlies: " + getKansBagageVerlies() +
+                "\nTotale zwaarte: " + getZwaarte();
+    }
 }

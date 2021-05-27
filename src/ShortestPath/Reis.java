@@ -3,7 +3,7 @@ package ShortestPath;
 import java.util.ArrayList;
 
 public class Reis implements Comparable<Reis>{
-    ArrayList<Stap> stappen = new ArrayList<>();
+    ArrayList<Stap> stappen;
 
     public Reis(ArrayList<Stap> stappen) {
         this.stappen = stappen;
@@ -19,6 +19,13 @@ public class Reis implements Comparable<Reis>{
             weight += stap.getZwaarte();
         }
         return weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Reis: " +
+                "  Stappen: " + getStappen() +
+                '}';
     }
 
     @Override
