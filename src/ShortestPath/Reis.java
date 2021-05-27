@@ -23,9 +23,9 @@ public class Reis implements Comparable<Reis>{
 
     @Override
     public String toString() {
-        return "Reis: " +
-                "  Stappen: " + getStappen() +
-                '}';
+        return "\n\nReis: " +
+                "\nAantalstappen: " + getStappen().size() +
+                "\nStappen: " + getStappen().toString().replace("[", "").replace("]", "");
     }
 
     @Override

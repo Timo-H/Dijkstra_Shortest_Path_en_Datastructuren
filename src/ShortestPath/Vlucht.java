@@ -24,9 +24,9 @@ public class Vlucht extends Stap{
 
     @Override
     public String toString() {
-        return "\nVlucht: " +
-                "\nprijs: " + getPrijs() +
+        return "\n\nVlucht: " +
+                "\nprijs: €" + getPrijs() +
                 "\nkansBagageVerlies: " + getKansBagageVerlies() +
-                "\nTotale zwaarte: " + getZwaarte();
+                "% \nTotale zwaarte: " + getZwaarte();
     }
 }

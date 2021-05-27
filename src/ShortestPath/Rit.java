@@ -18,8 +18,8 @@ public class Rit extends Stap{
 
     @Override
     public String toString() {
-        return "\nRit: " +
+        return "\n\nRit: " +
                 "\nAfstand: " + getAfstand() +
-                "\nTotale zwaarte: " + getZwaarte();
+                "Km\nTotale zwaarte: " + getZwaarte();
     }
 }

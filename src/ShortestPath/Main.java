@@ -1,12 +1,13 @@
 package ShortestPath;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Main{
     public static void main(String [] args) {
         Vlucht vlucht1 = new Vlucht(40, 5);
-        Vlucht vlucht2 = new Vlucht(45, 5);
+        Vlucht vlucht2 = new Vlucht(100, 30);
         Vlucht vlucht3 = new Vlucht(60, 5);
 
         Rit rit1 = new Rit(20);
@@ -25,12 +26,12 @@ public class Main{
 
         ArrayList<Stap> stappen2 = new ArrayList<>();
         stappen2.add(vlucht2);
-        stappen2.add(treinrit2);
 
         ArrayList<Stap> stappen3 = new ArrayList<>();
         stappen3.add(rit2);
         stappen3.add(treinrit3);
         stappen3.add(rit4);
+        stappen3.add(treinrit2);
 
         ArrayList<Stap> stappen4 = new ArrayList<>();
         stappen4.add(rit1);
@@ -41,13 +42,23 @@ public class Main{
         Reis reis3 = new Reis(stappen3);
         Reis reis4 = new Reis(stappen4);
 
-        PriorityQueue<Reis> pQueue = new PriorityQueue<>();
+        Comparator<Reis> aantalStappenComparator = Comparator.comparingInt(r -> r.getStappen().size());
+
+        PriorityQueue<Reis> pQueue = new PriorityQueue<>(aantalStappenComparator);
         pQueue.add(reis1);
         pQueue.add(reis2);
         pQueue.add(reis3);
         pQueue.add(reis4);
 
-        System.out.println(pQueue);
-
+        Reis beste = pQueue.poll();
+        while (!pQueue.isEmpty()) {
+            assert beste != null;
+            if (beste.compareTo(pQueue.peek()) > 0) {
+                beste = pQueue.poll();
+            } else {
+                pQueue.poll();
+            }
+        }
+        System.out.println("De beste reis is:" + beste);
     }
 }

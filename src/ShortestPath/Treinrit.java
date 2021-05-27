@@ -18,8 +18,8 @@ public class Treinrit extends Stap{
 
     @Override
     public String toString() {
-        return "\nTreinrit: " +
+        return "\n\nTreinrit: " +
                 "\nTijd: " + getTijd() +
-                "\nTotale zwaarte: " + getZwaarte();
+                " Min\nTotale zwaarte: " + getZwaarte();
     }
 }
